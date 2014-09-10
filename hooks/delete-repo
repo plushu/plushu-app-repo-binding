@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -eo pipefail; [[ -n "$PLUSHU_TRACE" ]] && set -x
+
+if [[ -z "$PLUSHU_APP_REPO_BINDING" ]]; then
+  PLUSHU_APP_REPO_BINDING="$1" "$PLUSHU_ROOT/lib/plushook" destroy-app "$1"
+fi
